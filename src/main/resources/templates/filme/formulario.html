@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Cadastrar contatos</title>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" media="screen">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Cadastrar Filmes</h1>
+            <form th:object="${filme}" th:action="@{/filme/salvar}" method="post">
+                
+                <input th:field="*{id}" type="hidden" id="id">               
+                
+                <div class="from-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="titulo">Titulo</label>
+                        <input th:field="*{titulo}" type="text" class="form-control" id="titulo" placeholder="Nome">
+                    </div>
+                </div>
+
+                <div class="from-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="descricao">Descrição</label>
+                        <input th:field="*{descricao}" type="text" class="form-control" id="descricao" placeholder="descricao">
+                    </div>
+                </div>
+
+           
+                <a href="/filme/listar" class="btn">Voltar</a>
+                <button class="btn btn-success" type="submit">Salvar</button>
+            </form>
+        </div>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
